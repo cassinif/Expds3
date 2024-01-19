@@ -2,8 +2,8 @@ function U = etd2rkds(U,F,g,A,m,tau)
   t = 0;
   d = length(A{1});
   for mu = 1:d
-    [P1{1}{mu},P2{1}{mu}] = phiquad(tau*A{1}{mu},2);
-    [P1{2}{mu},P2{2}{mu}] = phiquad(tau*A{2}{mu},2);
+    [P2{1}{mu},P1{1}{mu}] = phiellm(tau*A{1}{mu},2);
+    [P2{2}{mu},P1{2}{mu}] = phiellm(tau*A{2}{mu},2);
   end
   for jj = 1:m
     U2{1} = U{1} + tau*tucker(F{1}(t,U{1},U{2}),P1{1});

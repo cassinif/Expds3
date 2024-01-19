@@ -16,33 +16,33 @@ function u = exprk3ds_real(u,F,g,A,m,tau,c2)
     for mu =1:d
       % First eq
       % For u2
-      P1_1_u2{1}{mu} = phiquad(c2*tau*alpha1{mu}(1)*A{1}{mu},1);
-      P2_1_u2{1}{mu} = phiquad(c2*tau*alpha2{mu}(1)*A{1}{mu},2);
+      P1_1_u2{1}{mu} = phiellm(c2*tau*alpha1{mu}(1)*A{1}{mu},1);
+      P2_1_u2{1}{mu} = phiellm(c2*tau*alpha2{mu}(1)*A{1}{mu},2);
       % For u3
-      P1_1_u3{1}{mu} = phiquad(c3*tau*alpha1{mu}(1)*A{1}{mu},1);
-      P2_1_u3{1}{mu} = phiquad(c3*tau*alpha2{mu}(1)*A{1}{mu},2);
-      P1_2_u3{1}{mu} = phiquad(c3*tau*alpha1{mu}(2)*A{1}{mu},1);
-      P2_2_u3{1}{mu} = phiquad(c3*tau*alpha2{mu}(2)*A{1}{mu},2);
+      P1_1_u3{1}{mu} = phiellm(c3*tau*alpha1{mu}(1)*A{1}{mu},1);
+      P2_1_u3{1}{mu} = phiellm(c3*tau*alpha2{mu}(1)*A{1}{mu},2);
+      P1_2_u3{1}{mu} = phiellm(c3*tau*alpha1{mu}(2)*A{1}{mu},1);
+      P2_2_u3{1}{mu} = phiellm(c3*tau*alpha2{mu}(2)*A{1}{mu},2);
       % For final approx 
-      P1_1_u{1}{mu} = phiquad(tau*alpha1{mu}(1)*A{1}{mu},1);
-      P2_1_u{1}{mu} = phiquad(tau*alpha2{mu}(1)*A{1}{mu},2);
-      P1_2_u{1}{mu} = phiquad(tau*alpha1{mu}(2)*A{1}{mu},1);
-      P2_2_u{1}{mu} = phiquad(tau*alpha2{mu}(2)*A{1}{mu},2);
+      P1_1_u{1}{mu} = phiellm(tau*alpha1{mu}(1)*A{1}{mu},1);
+      P2_1_u{1}{mu} = phiellm(tau*alpha2{mu}(1)*A{1}{mu},2);
+      P1_2_u{1}{mu} = phiellm(tau*alpha1{mu}(2)*A{1}{mu},1);
+      P2_2_u{1}{mu} = phiellm(tau*alpha2{mu}(2)*A{1}{mu},2);
 
       % Second eq
       % For u2
-      P1_1_u2{2}{mu} = phiquad(c2*tau*alpha1{mu}(1)*A{2}{mu},1);
-      P2_1_u2{2}{mu} = phiquad(c2*tau*alpha2{mu}(1)*A{2}{mu},2);
+      P1_1_u2{2}{mu} = phiellm(c2*tau*alpha1{mu}(1)*A{2}{mu},1);
+      P2_1_u2{2}{mu} = phiellm(c2*tau*alpha2{mu}(1)*A{2}{mu},2);
       % For u3
-      P1_1_u3{2}{mu} = phiquad(c3*tau*alpha1{mu}(1)*A{2}{mu},1);
-      P2_1_u3{2}{mu} = phiquad(c3*tau*alpha2{mu}(1)*A{2}{mu},2);
-      P1_2_u3{2}{mu} = phiquad(c3*tau*alpha1{mu}(2)*A{2}{mu},1);
-      P2_2_u3{2}{mu} = phiquad(c3*tau*alpha2{mu}(2)*A{2}{mu},2);
+      P1_1_u3{2}{mu} = phiellm(c3*tau*alpha1{mu}(1)*A{2}{mu},1);
+      P2_1_u3{2}{mu} = phiellm(c3*tau*alpha2{mu}(1)*A{2}{mu},2);
+      P1_2_u3{2}{mu} = phiellm(c3*tau*alpha1{mu}(2)*A{2}{mu},1);
+      P2_2_u3{2}{mu} = phiellm(c3*tau*alpha2{mu}(2)*A{2}{mu},2);
       % For final approx 
-      P1_1_u{2}{mu} = phiquad(tau*alpha1{mu}(1)*A{2}{mu},1);
-      P2_1_u{2}{mu} = phiquad(tau*alpha2{mu}(1)*A{2}{mu},2);
-      P1_2_u{2}{mu} = phiquad(tau*alpha1{mu}(2)*A{2}{mu},1);
-      P2_2_u{2}{mu} = phiquad(tau*alpha2{mu}(2)*A{2}{mu},2);
+      P1_1_u{2}{mu} = phiellm(tau*alpha1{mu}(1)*A{2}{mu},1);
+      P2_1_u{2}{mu} = phiellm(tau*alpha2{mu}(1)*A{2}{mu},2);
+      P1_2_u{2}{mu} = phiellm(tau*alpha1{mu}(2)*A{2}{mu},1);
+      P2_2_u{2}{mu} = phiellm(tau*alpha2{mu}(2)*A{2}{mu},2);
     end
     for jj = 1:m
       Fn{1} = F{1}(t,u{1},u{2});
@@ -90,42 +90,42 @@ function u = exprk3ds_real(u,F,g,A,m,tau,c2)
     for mu =1:d
       % First eq
       % For u2
-      P1_1_u2{1}{mu} = phiquad(c2*tau*alpha1(1)*A{1}{mu},1);
-      P2_1_u2{1}{mu} = phiquad(c2*tau*alpha2(1)*A{1}{mu},2);
-      P1b_1_u2{1}{mu} = phiquad(c2*tau*alpha3(1)*A{1}{mu},1);
+      P1_1_u2{1}{mu} = phiellm(c2*tau*alpha1(1)*A{1}{mu},1);
+      P2_1_u2{1}{mu} = phiellm(c2*tau*alpha2(1)*A{1}{mu},2);
+      P1b_1_u2{1}{mu} = phiellm(c2*tau*alpha3(1)*A{1}{mu},1);
       % For u3
-      P1_1_u3{1}{mu} = phiquad(c3*tau*alpha1(1)*A{1}{mu},1);
-      P2_1_u3{1}{mu} = phiquad(c3*tau*alpha2(1)*A{1}{mu},2);
-      P1b_1_u3{1}{mu} = phiquad(c3*tau*alpha3(1)*A{1}{mu},1);
-      P1_2_u3{1}{mu} = phiquad(c3*tau*alpha1(2)*A{1}{mu},1);
-      P2_2_u3{1}{mu} = phiquad(c3*tau*alpha2(2)*A{1}{mu},2);
-      P1b_2_u3{1}{mu} = phiquad(c3*tau*alpha3(2)*A{1}{mu},1);
+      P1_1_u3{1}{mu} = phiellm(c3*tau*alpha1(1)*A{1}{mu},1);
+      P2_1_u3{1}{mu} = phiellm(c3*tau*alpha2(1)*A{1}{mu},2);
+      P1b_1_u3{1}{mu} = phiellm(c3*tau*alpha3(1)*A{1}{mu},1);
+      P1_2_u3{1}{mu} = phiellm(c3*tau*alpha1(2)*A{1}{mu},1);
+      P2_2_u3{1}{mu} = phiellm(c3*tau*alpha2(2)*A{1}{mu},2);
+      P1b_2_u3{1}{mu} = phiellm(c3*tau*alpha3(2)*A{1}{mu},1);
       % For final approx 
-      P1_1_u{1}{mu} = phiquad(tau*alpha1(1)*A{1}{mu},1);
-      P2_1_u{1}{mu} = phiquad(tau*alpha2(1)*A{1}{mu},2);
-      P1b_1_u{1}{mu} = phiquad(tau*alpha3(1)*A{1}{mu},1);
-      P1_2_u{1}{mu} = phiquad(tau*alpha1(2)*A{1}{mu},1);
-      P2_2_u{1}{mu} = phiquad(tau*alpha2(2)*A{1}{mu},2);
-      P1b_2_u{1}{mu} = phiquad(tau*alpha3(2)*A{1}{mu},1);
+      P1_1_u{1}{mu} = phiellm(tau*alpha1(1)*A{1}{mu},1);
+      P2_1_u{1}{mu} = phiellm(tau*alpha2(1)*A{1}{mu},2);
+      P1b_1_u{1}{mu} = phiellm(tau*alpha3(1)*A{1}{mu},1);
+      P1_2_u{1}{mu} = phiellm(tau*alpha1(2)*A{1}{mu},1);
+      P2_2_u{1}{mu} = phiellm(tau*alpha2(2)*A{1}{mu},2);
+      P1b_2_u{1}{mu} = phiellm(tau*alpha3(2)*A{1}{mu},1);
       % Second eq
       % For u2
-      P1_1_u2{2}{mu} = phiquad(c2*tau*alpha1(1)*A{2}{mu},1);
-      P2_1_u2{2}{mu} = phiquad(c2*tau*alpha2(1)*A{2}{mu},2);
-      P1b_1_u2{2}{mu} = phiquad(c2*tau*alpha3(1)*A{2}{mu},1);
+      P1_1_u2{2}{mu} = phiellm(c2*tau*alpha1(1)*A{2}{mu},1);
+      P2_1_u2{2}{mu} = phiellm(c2*tau*alpha2(1)*A{2}{mu},2);
+      P1b_1_u2{2}{mu} = phiellm(c2*tau*alpha3(1)*A{2}{mu},1);
       % For u3
-      P1_1_u3{2}{mu} = phiquad(c3*tau*alpha1(1)*A{2}{mu},1);
-      P2_1_u3{2}{mu} = phiquad(c3*tau*alpha2(1)*A{2}{mu},2);
-      P1b_1_u3{2}{mu} = phiquad(c3*tau*alpha3(1)*A{2}{mu},1);
-      P1_2_u3{2}{mu} = phiquad(c3*tau*alpha1(2)*A{2}{mu},1);
-      P2_2_u3{2}{mu} = phiquad(c3*tau*alpha2(2)*A{2}{mu},2);
-      P1b_2_u3{2}{mu} = phiquad(c3*tau*alpha3(2)*A{2}{mu},1);
+      P1_1_u3{2}{mu} = phiellm(c3*tau*alpha1(1)*A{2}{mu},1);
+      P2_1_u3{2}{mu} = phiellm(c3*tau*alpha2(1)*A{2}{mu},2);
+      P1b_1_u3{2}{mu} = phiellm(c3*tau*alpha3(1)*A{2}{mu},1);
+      P1_2_u3{2}{mu} = phiellm(c3*tau*alpha1(2)*A{2}{mu},1);
+      P2_2_u3{2}{mu} = phiellm(c3*tau*alpha2(2)*A{2}{mu},2);
+      P1b_2_u3{2}{mu} = phiellm(c3*tau*alpha3(2)*A{2}{mu},1);
       % For final approx 
-      P1_1_u{2}{mu} = phiquad(tau*alpha1(1)*A{2}{mu},1);
-      P2_1_u{2}{mu} = phiquad(tau*alpha2(1)*A{2}{mu},2);
-      P1b_1_u{2}{mu} = phiquad(tau*alpha3(1)*A{2}{mu},1);
-      P1_2_u{2}{mu} = phiquad(tau*alpha1(2)*A{2}{mu},1);
-      P2_2_u{2}{mu} = phiquad(tau*alpha2(2)*A{2}{mu},2);
-      P1b_2_u{2}{mu} = phiquad(tau*alpha3(2)*A{2}{mu},1);
+      P1_1_u{2}{mu} = phiellm(tau*alpha1(1)*A{2}{mu},1);
+      P2_1_u{2}{mu} = phiellm(tau*alpha2(1)*A{2}{mu},2);
+      P1b_1_u{2}{mu} = phiellm(tau*alpha3(1)*A{2}{mu},1);
+      P1_2_u{2}{mu} = phiellm(tau*alpha1(2)*A{2}{mu},1);
+      P2_2_u{2}{mu} = phiellm(tau*alpha2(2)*A{2}{mu},2);
+      P1b_2_u{2}{mu} = phiellm(tau*alpha3(2)*A{2}{mu},1);
     end
     for jj = 1:m
       Fn{1} = F{1}(t,u{1},u{2});
