@@ -1,8 +1,6 @@
-function u = exprk3ds_real(u,F,g,A,m,tau,c2)
-
+function u = exprk3ds_real(u,g,A,m,tau,c2)
   t = 0;
   c3 = 2/3;
-
   d = length(A{1});
 
   if d == 2
@@ -45,11 +43,10 @@ function u = exprk3ds_real(u,F,g,A,m,tau,c2)
       P2_2_u{2}{mu} = phiellm(tau*alpha2{mu}(2)*A{2}{mu},2);
     end
     for jj = 1:m
-      Fn{1} = F{1}(t,u{1},u{2});
-      Fn{2} = F{2}(t,u{1},u{2});
-
       gn{1} = g{1}(t,u{1},u{2});
       gn{2} = g{2}(t,u{1},u{2});
+      Fn{1} = kronsumv(u{1},A{1}) + gn{1};
+      Fn{2} = kronsumv(u{2},A{2}) + gn{2};
 
       U2{1} = u{1} + c2*tau*(eta1(1)*tucker(Fn{1},P1_1_u2{1}) + ...
                              eta2(1)*tucker(Fn{1},P2_1_u2{1}));
@@ -128,11 +125,10 @@ function u = exprk3ds_real(u,F,g,A,m,tau,c2)
       P1b_2_u{2}{mu} = phiellm(tau*alpha3(2)*A{2}{mu},1);
     end
     for jj = 1:m
-      Fn{1} = F{1}(t,u{1},u{2});
-      Fn{2} = F{2}(t,u{1},u{2});
-
       gn{1} = g{1}(t,u{1},u{2});
       gn{2} = g{2}(t,u{1},u{2});
+      Fn{1} = kronsumv(u{1},A{1}) + gn{1};
+      Fn{2} = kronsumv(u{2},A{2}) + gn{2};
 
       U2{1} = u{1} + c2*tau*(eta1(1)*tucker(Fn{1},P1_1_u2{1}) + ...
                              eta2(1)*tucker(Fn{1},P2_1_u2{1}) + ...
