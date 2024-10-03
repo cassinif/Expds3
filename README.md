@@ -2,8 +2,8 @@
 
 This is a companion software to the manuscript
 
-[F. Cassini. Efficient third order tensor-oriented directional splitting
-for exponential integrators, arXiv preprint arXiv:2310.07551](https://arxiv.org/abs/2310.07551)
+[F. Cassini. Efficient third-order tensor-oriented directional splitting
+for exponential integrators, Electron. Trans. Numer. Anal., 60:520--540, 2024](https://doi.org/10.1553/etna_vol60s520)
 
 In particular, it contains the scripts needed to 
 reproduce the MATLAB numerical examples of the article.
